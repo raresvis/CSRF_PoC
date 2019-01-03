@@ -2,7 +2,7 @@
 
 # run with:
 #   export FLASK_APP=forum.py FLASK_ENV=development
-#   flask run --port 666
+#   flask run --port 1666
 
 from flask import Flask, redirect, url_for
 
