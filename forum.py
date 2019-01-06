@@ -69,4 +69,4 @@ def post(message):
 
 	MESSAGES.append((LOGGED_AS, message))
 
-	return redirect(url_for('thread'))
+	return 'Posted successfully'
